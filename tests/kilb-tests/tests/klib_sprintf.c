@@ -25,6 +25,34 @@ void test_sprintf() {
     const char *str3 = "This is a longer string for testing.";
     sprintf(dest, "String: %s", str3);
     assert(strcmp(dest, "String: This is a longer string for testing.") == 0);
+
+    sprintf(dest, "%.3s", str1);
+    assert(strcmp(dest, "Hel") == 0);
+
+    sprintf(dest, "%5d", 42);
+    assert(strcmp(dest, "   42") == 0);
+
+    sprintf(dest, "%05d", 42);
+    assert(strcmp(dest, "00042") == 0); 
+
+    sprintf(dest, "% d", 42);
+    assert(strcmp(dest, " 42") == 0); 
+
+    sprintf(dest, "%+d", 42);
+    assert(strcmp(dest, "+42") == 0);
+
+    sprintf(dest, "%x", 42);
+    assert(strcmp(dest, "2a") == 0);
+
+    sprintf(dest, "%#08x", 42);
+    assert(strcmp(dest, "0x00002a") == 0);
+
+    sprintf(dest, "%#8x", 42);
+    assert(strcmp(dest, "    0x2a") == 0);
+
+    int num = 10;
+    sprintf(dest, "%p", (void*)&num);
+    assert(strcmp(dest, "0xa") == 0);
 }
 
 
