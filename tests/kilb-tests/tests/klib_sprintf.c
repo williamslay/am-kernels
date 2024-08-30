@@ -2,13 +2,13 @@
 #include <limits.h>
 
 long long testset[] = {0, INT_MAX / 17, INT_MAX, INT_MIN, INT_MIN + 1,
-              UINT_MAX / 17, INT_MAX / 17, UINT_MAX};
+              UINT_MAX / 17, INT_MAX / 17, UINT_MAX, 880900 / 3};
 char * ans[] = {"Number: 0","Number: 126322567","Number: 2147483647",
         "Number: -2147483648","Number: -2147483647","Number: 252645135",
-        "Number: 126322567","Number: -1"};
+        "Number: 126322567","Number: -1","Number: 293633"};
 
 void test_sprintf() {
-    for(int i = 0;i<8;i++) {
+    for(int i = 0;i<9;i++) {
         sprintf(dest, "Number: %d",(int)testset[i]);
         assert(strcmp(dest, ans[i]) == 0);
     }
