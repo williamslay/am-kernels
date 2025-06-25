@@ -4,15 +4,15 @@
 void test_strcpy() {
     const char *src1 = "Hello, World!";
     strcpy(dest, src1);
-    assert(strcmp(dest, src1) == 0);
+    check(strcmp(dest, src1) == 0);
 
     const char *src2 = "";
     strcpy(dest, src2);
-    assert(strcmp(dest, src2) == 0);
+    check(strcmp(dest, src2) == 0);
 
     const char *src3 = "This is a longer string that we are going to copy.";
     strcpy(dest, src3);
-    assert(strcmp(dest, src3) == 0);
+    check(strcmp(dest, src3) == 0);
 }
 
 

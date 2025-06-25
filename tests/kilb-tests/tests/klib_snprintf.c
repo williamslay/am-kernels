@@ -10,26 +10,26 @@ char * ans[] = {"Number: 0","Number: 126322567","Number: 2147483647",
 void test_snprintf() {
     for(int i = 0;i<8;i++) {
         snprintf(dest,N,"Number: %d",(int)testset[i]);
-        assert(strcmp(dest, ans[i]) == 0);
+        check(strcmp(dest, ans[i]) == 0);
     }
 
     const char *str1 = "Hello";
     snprintf(dest,N,"String: %s", str1);
-    assert(strcmp(dest, "String: Hello") == 0);
+    check(strcmp(dest, "String: Hello") == 0);
 
     const char *str2 = "";
     snprintf(dest,N,"String: %s", str2);
-    assert(strcmp(dest, "String: ") == 0);
+    check(strcmp(dest, "String: ") == 0);
 
     const char *str3 = "This is a longer string for testing.";
     snprintf(dest,N,"String: %s", str3);
-    assert(strcmp(dest, "String: This is a longer string for testing.") == 0);
+    check(strcmp(dest, "String: This is a longer string for testing.") == 0);
 
     char buffer[20];
     int num1 = 42;
     int num2 = 12345678;
     snprintf(buffer, sizeof(buffer), "Num1: %d, Num2: %d", num1, num2);
-    assert(strcmp(buffer, "Num1: 42, Num2: 123") == 0);
+    check(strcmp(buffer, "Num1: 42, Num2: 123") == 0);
 }
 
 

@@ -5,6 +5,10 @@
 uint8_t data[N];
 char dest[N];
 
+void check(bool cond) {
+  if (!cond) halt(1);
+}
+
 /*Test memory and string writing functions*/
 void reset() {
   int i;
@@ -16,14 +20,14 @@ void reset() {
 void check_seq(int l, int r, int val) {
   int i;
   for (i = l; i < r; i ++) {
-    assert(data[i] == val + i - l);
+    check(data[i] == val + i - l);
   }
 }
 
 void check_eq(int l, int r, int val) {
   int i;
   for (i = l; i < r; i ++) {
-    assert(data[i] == val);
+    check(data[i] == val);
   }
 }
 
@@ -31,6 +35,6 @@ void check_mem_eq(void *out, const void *in, size_t n) {
   char *dp = out;
   const char *sp = in;
   while(n--) {
-    assert(*(uint8_t*)dp++ == *(uint8_t*)sp++); 
+    check(*(uint8_t*)dp++ == *(uint8_t*)sp++);
   }
 }

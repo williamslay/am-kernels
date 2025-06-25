@@ -7,27 +7,27 @@ void test_strcat() {
     strcpy(dest, "Hello");
     const char *src1 = " World";
     strcat(dest, src1);
-    assert(strcmp(dest, "Hello World") == 0);
+    check(strcmp(dest, "Hello World") == 0);
 
     strcpy(dest, "Hello");
     const char *src2 = "";
     strcat(dest, src2);
-    assert(strcmp(dest, "Hello") == 0);
+    check(strcmp(dest, "Hello") == 0);
 
     strcpy(dest, "");
     const char *src3 = "Hello";
     strcat(dest, src3);
-    assert(strcmp(dest, "Hello") == 0);
+    check(strcmp(dest, "Hello") == 0);
 
     strcpy(dest, "");
     const char *src4 = "";
     strcat(dest, src4);
-    assert(strcmp(dest, "") == 0);
+    check(strcmp(dest, "") == 0);
 
     strcpy(dest, "Short");
     const char *src5 = " and long enough string to concatenate.";
     strcat(dest, src5);
-    assert(strcmp(dest, "Short and long enough string to concatenate.") == 0);
+    check(strcmp(dest, "Short and long enough string to concatenate.") == 0);
 }
 
 int main() {
